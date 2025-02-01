@@ -1,0 +1,87 @@
+# config.yaml
+
+# Default Account Settings
+account_balance: 40.0
+max_risk: 0.05
+
+# API Configuration
+api:
+  base_url: 'https://api.xeggex.com/api/v2'
+  websocket_url: 'wss://api.xeggex.com'
+
+# Strategies and Parameters
+strategies:
+  sma_crossover:
+    params:
+      short_window: 5
+      long_window: 10
+
+  rsi_strategy:
+    params:
+      window: 14
+      overbought: 80
+      oversold: 20
+
+  macd_strategy:
+    params:
+      short_window: 6
+      long_window: 13
+      signal_window: 5
+
+  bollinger_bands_strategy:
+    params:
+      window: 20
+      num_std_dev: 2
+
+  combined_strategy:
+    params:
+      sma_short_window: 5
+      sma_long_window: 15
+      rsi_window: 7
+      rsi_overbought: 70
+      rsi_oversold: 20
+      macd_short_window: 6
+      macd_long_window: 13
+      macd_signal_window: 5
+
+  sma_crossover_with_orderbook:
+    params:
+      short_window: 5
+      long_window: 10
+      imbalance_threshold: 0.03
+
+  ema_crossover_scalping:
+    params:
+      short_window: 5
+      long_window: 15
+      signal_threshold: 0.003
+
+  alma_strategy:
+    params:
+      window: 9
+      offset: 0.85
+      sigma: 6
+
+  ama_strategy:
+    params:
+      window: 10
+      pow1: 2
+      pow2: 30
+
+  ichimoku_strategy:
+    params:
+      window1: 9
+      window2: 26
+      window3: 52
+
+  stochastic_strategy:
+    params:
+      window: 14
+      smooth_window: 3
+      upper_bound: 80
+      lower_bound: 20
+
+# Time Intervals (in seconds)
+sleep_intervals:
+  between_symbols: 1.5
+  main_loop: 0.5
